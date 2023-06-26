@@ -1,0 +1,13 @@
+.container {
+	background: var(--container-background);
+	box-shadow: 0 0 24px 0 var(--container-shadow);
+	backdrop-filter: blur(4px);
+	-webkit-backdrop-filter: blur(4px);
+	border-radius: 10px;
+	height: calc(100vh - 10rem);
+	width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding: 3rem 6rem;
+}
