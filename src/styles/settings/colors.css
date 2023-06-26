@@ -1,4 +1,6 @@
 :root {
 	--black-color: #212121;
 	--white-color: #fafafa;
+	--container-background: rgba(250, 250, 250, 0.2);
+	--container-shadow: rgba(190, 190, 190, 0.4);
 }
