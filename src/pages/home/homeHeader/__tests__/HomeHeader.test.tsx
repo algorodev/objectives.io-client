@@ -4,17 +4,17 @@ import HomeHeader from '../HomeHeader'
 
 describe('Home Header component', () => {
 	it('should render component as expected', () => {
-		render(<HomeHeader />)
+		const onOpenModalFn = vi.fn()
+		render(<HomeHeader onOpenModal={onOpenModalFn} />)
 		expect(screen.getByRole('button')).toBeInTheDocument()
 	})
 
 	it('should render component as expected', () => {
-		const logSpy = vi.spyOn(global.console, 'log')
+		const onOpenModalFn = vi.fn()
 
-		render(<HomeHeader />)
+		render(<HomeHeader onOpenModal={onOpenModalFn} />)
 		fireEvent.click(screen.getByRole('button'))
 
-		expect(logSpy).toHaveBeenCalledTimes(1)
-		expect(logSpy).toHaveBeenCalledWith('Nuevo To Do')
+		expect(onOpenModalFn).toHaveBeenCalledTimes(1)
 	})
 })
