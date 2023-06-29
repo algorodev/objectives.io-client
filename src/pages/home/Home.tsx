@@ -1,5 +1,6 @@
 import Container from '../../components/container/Container'
 import Separator from '../../components/separator/Separator'
+import TodoList from '../../components/todoList/TodoList'
 import HomeHeader from './homeHeader/HomeHeader'
 
 const Home = () => {
@@ -7,6 +8,7 @@ const Home = () => {
 		<Container>
 			<HomeHeader />
 			<Separator />
+			<TodoList />
 		</Container>
 	)
 }
