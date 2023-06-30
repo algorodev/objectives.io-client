@@ -3,3 +3,7 @@ export interface TodoI {
 	title: string
 	completed: boolean
 }
+
+export interface TodoFormI {
+	title: string
+}
