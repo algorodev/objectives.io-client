@@ -5,14 +5,16 @@
 	left: 0;
 	right: 0;
 	background-color: var(--white-color);
+	color: var(--black-color);
 	margin: 0 auto;
+	border-radius: 1rem;
 	z-index: 30;
 	animation: slide-down 300ms ease-out forwards;
 }
 
 .modal__header {
 	display: flex;
-	justify-content: space-between;
+	justify-content: flex-end;
 	align-items: center;
 	height: 3rem;
 	padding: 2rem 3rem;

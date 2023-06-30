@@ -4,7 +4,7 @@ import ModalContainer from './modalContainer/ModalContainer'
 import { ModalProps } from './modal.types'
 import { ReactNode } from 'react'
 
-const Modal = ({ title, children, onClose }: ModalProps) => (
+const Modal = ({ children, onClose }: ModalProps) => (
 	<section>
 		{createPortal(
 			(<Backdrop onBackdropClick={onClose} />) as ReactNode,
@@ -13,9 +13,7 @@ const Modal = ({ title, children, onClose }: ModalProps) => (
 		)}
 		{createPortal(
 			(
-				<ModalContainer title={title} onClose={onClose}>
-					{children}
-				</ModalContainer>
+				<ModalContainer onClose={onClose}>{children}</ModalContainer>
 			) as ReactNode,
 			document.getElementById('modal') as HTMLElement,
 		)}
