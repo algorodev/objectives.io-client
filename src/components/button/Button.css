@@ -5,10 +5,10 @@
 	border-radius: 1rem;
 	cursor: pointer;
 	transition: background-color 200ms;
+}
 
-	&:hover {
-		background-color: var(--secondary-color);
-	}
+.button:hover {
+	background-color: var(--secondary-color);
 }
 
 .button__label {

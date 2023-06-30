@@ -26,10 +26,6 @@
 .modal__action {
 	width: 3rem;
 	cursor: pointer;
-
-	&:hover {
-		text-decoration: line-through;
-	}
 }
 
 .modal__body {
