@@ -2,6 +2,7 @@ import Home from './pages/home/Home'
 import './App.css'
 import { useState } from 'react'
 import Modal from './components/modal/Modal'
+import TodoForm from './components/todoForm/TodoForm'
 
 const App = () => {
 	const [isModalOpen, setIsModalOpen] = useState(false)
@@ -9,8 +10,8 @@ const App = () => {
 	return (
 		<>
 			{isModalOpen && (
-				<Modal title='Test' onClose={() => setIsModalOpen(false)}>
-					<h4>Modal works!</h4>
+				<Modal onClose={() => setIsModalOpen(false)}>
+					<TodoForm />
 				</Modal>
 			)}
 			<main className='app'>
