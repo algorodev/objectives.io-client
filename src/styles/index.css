@@ -1,4 +1,5 @@
 @import './settings/_index.css';
+@import './functions//_index.css';
 
 :root {
 	font-size: 10px;
