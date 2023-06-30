@@ -4,7 +4,7 @@ import TodoItem from '../todoItem/TodoItem'
 import './TodoList.css'
 
 const TodoList = () => {
-	const { data, updateTodoStatus } = useTodos()
+	const { data, deleteTodo, updateTodoStatus } = useTodos()
 
 	return (
 		<section className='todo-list'>
@@ -12,7 +12,8 @@ const TodoList = () => {
 				<TodoItem
 					key={`todo-${todo.id}`}
 					todo={todo}
-					onTodoClick={() => updateTodoStatus(todo.id)}
+					onCheckClick={() => updateTodoStatus(todo.id)}
+					onDeleteClick={() => deleteTodo(todo.id)}
 				/>
 			))}
 		</section>

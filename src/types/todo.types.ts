@@ -1,5 +1,9 @@
+export type TodoState = {
+	todos: TodoI[]
+}
+
 export interface TodoI {
-	id: number
+	id: string
 	title: string
 	completed: boolean
 }

@@ -6,7 +6,7 @@ const TodoForm = () => {
 	const { register, errors, onSubmit } = useTodoForm()
 
 	return (
-		<form className='todo-form'>
+		<form className='todo-form' onSubmit={onSubmit}>
 			<div className='input-control'>
 				<label className='input-control__label' htmlFor='todo-title-input'>
 					Title

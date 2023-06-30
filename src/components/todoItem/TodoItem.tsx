@@ -1,20 +1,30 @@
 import { TodoItemProps } from './todoItem.types'
-import check from '../../assets/icons/check.svg'
+import checkIcon from '../../assets/icons/check.svg'
+import deleteIcon from '../../assets/icons/delete.svg'
 import './TodoItem.css'
 
-const TodoItem = ({ todo, onTodoClick }: TodoItemProps) => (
-	<div className='todo-item' onClick={onTodoClick}>
+const TodoItem = ({ todo, onCheckClick, onDeleteClick }: TodoItemProps) => (
+	<div className='todo-item'>
 		<p
 			className={`todo-item__title ${
 				todo.completed ? 'todo-item__title--checked' : ''
 			}`}>
 			{todo.title}
 		</p>
-		<div className={'todo-item__check'}>
-			{todo.completed && (
-				<img className='todo-item__check-icon' src={check} alt='check-icon' />
+		<section className='todo-item__actions'>
+			{!todo.completed && (
+				<div
+					className='todo-item__action todo-item__action--check'
+					onClick={onCheckClick}>
+					<img className='todo-item__icon' src={checkIcon} alt='check-icon' />
+				</div>
 			)}
-		</div>
+			<div
+				className='todo-item__action todo-item__action--delete'
+				onClick={onDeleteClick}>
+				<img className='todo-item__icon' src={deleteIcon} alt='check-icon' />
+			</div>
+		</section>
 	</div>
 )
 
