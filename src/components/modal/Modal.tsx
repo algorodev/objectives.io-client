@@ -8,7 +8,8 @@ const Modal = ({ title, children, onClose }: ModalProps) => (
 	<section>
 		{createPortal(
 			(<Backdrop onBackdropClick={onClose} />) as ReactNode,
-			document.getElementById('modal') as HTMLElement,
+			document.getElementById('modal') ||
+				(document.createElement('div') as HTMLElement),
 		)}
 		{createPortal(
 			(

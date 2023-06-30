@@ -1,4 +1,5 @@
 /// <reference types="vitest" />
+import { configDefaults } from 'vitest/config'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 
@@ -9,6 +10,8 @@ export default defineConfig({
 		globals: true,
 		environment: 'happy-dom',
 		setupFiles: ['src/setupTest.ts'],
-		exclude: ['**/*.mock.ts', 'node_modules'],
+		include: ['**/__tests__/*.test.{tsx,ts}'],
+		exclude: [...configDefaults.exclude],
+		watch: true,
 	},
 })
