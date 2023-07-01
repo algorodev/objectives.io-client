@@ -12,6 +12,7 @@ const hydrateReducer = persistReducer(hydrateConfig, RootReducer)
 
 export const store = configureStore({
 	reducer: hydrateReducer,
+	middleware: [],
 })
 
 export const hydrate = persistStore(store)
