@@ -6,7 +6,7 @@ import { mockedData } from '../../../mocks/todo.mock'
 
 vi.mock('react-redux', () => ({
 	useSelector: vi.fn(),
-	useDispatch: vi.fn(() => {}),
+	useDispatch: vi.fn(),
 }))
 
 describe('Home Page', () => {

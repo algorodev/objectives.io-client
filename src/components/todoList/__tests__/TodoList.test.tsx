@@ -10,7 +10,7 @@ import {
 
 vi.mock('react-redux', () => ({
 	useSelector: vi.fn(),
-	useDispatch: vi.fn(() => {}),
+	useDispatch: vi.fn(),
 }))
 
 describe('Todo List component', () => {

@@ -10,7 +10,7 @@ import { useSelector, useDispatch } from 'react-redux'
 
 vi.mock('react-redux', () => ({
 	useSelector: vi.fn(),
-	useDispatch: vi.fn(() => {}),
+	useDispatch: vi.fn(),
 }))
 
 describe('useTodos hook', () => {

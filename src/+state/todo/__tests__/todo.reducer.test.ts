@@ -7,7 +7,10 @@ import {
 import todoReducer from '../todo.reducer'
 
 describe('Todo Reducer', () => {
-	const mockState = RootReducer(undefined, { type: '', payload: '' }).todo
+	const mockState = RootReducer(undefined, {
+		type: UpdateTodoActionTypes.UPDATE_TODO,
+		id: 'test-id',
+	}).todo
 
 	it('should return initial state on default as expected', () => {
 		expect(mockState).toStrictEqual({ todos: [] })

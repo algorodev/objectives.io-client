@@ -16,11 +16,7 @@ describe('Modal component', () => {
 			<h4>Create Portal works!</h4>
 		))
 		render(
-			<Modal
-				title='Test Modal'
-				onClose={onCloseFn}
-				children={<h4>Modal Container works!</h4>}
-			/>,
+			<Modal onClose={onCloseFn} children={<h4>Modal Container works!</h4>} />,
 		)
 	})
 

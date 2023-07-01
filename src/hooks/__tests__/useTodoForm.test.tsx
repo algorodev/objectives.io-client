@@ -2,7 +2,6 @@ import { act, renderHook } from '@testing-library/react'
 import { Mock, vi } from 'vitest'
 import useTodoForm from '../useTodoForm'
 import { useDispatch } from 'react-redux'
-import { mockCreateTodoAction } from '../../mocks/todo.mock'
 import { useForm } from 'react-hook-form'
 
 vi.mock('react-hook-form', () => ({
@@ -10,7 +9,7 @@ vi.mock('react-hook-form', () => ({
 }))
 
 vi.mock('react-redux', () => ({
-	useDispatch: vi.fn(() => {}),
+	useDispatch: vi.fn(),
 }))
 
 describe('useTodoForm hook', () => {
@@ -25,7 +24,7 @@ describe('useTodoForm hook', () => {
 			setFocus: vi.fn(),
 			reset: vi.fn(),
 			onSubmit: vi.fn(),
-			register: vi.fn()
+			register: vi.fn(),
 		}))
 		const { result } = renderHook(() => useTodoForm())
 		expect(result.current.errors).toBeDefined()
@@ -41,13 +40,13 @@ describe('useTodoForm hook', () => {
 			setFocus: vi.fn(),
 			reset: vi.fn(),
 			onSubmit: vi.fn(),
-			register: vi.fn()
+			register: vi.fn(),
 		}))
-		const data = {}
+		const data = { title: 'Test Title' }
 		const { result } = renderHook(() => useTodoForm())
 
-		act(async () => {
-			await result.current.onSubmit(data)
+		act(() => {
+			result.current.onSubmit(data)
 		})
 
 		expect(dispatch).toHaveBeenCalledTimes(1)
