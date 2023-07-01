@@ -22,7 +22,7 @@ const TodoItem = ({ todo, onCheckClick, onDeleteClick }: TodoItemProps) => (
 			<div
 				className='todo-item__action todo-item__action--delete'
 				onClick={onDeleteClick}>
-				<img className='todo-item__icon' src={deleteIcon} alt='check-icon' />
+				<img className='todo-item__icon' src={deleteIcon} alt='delete-icon' />
 			</div>
 		</section>
 	</div>

@@ -1,17 +1,18 @@
 import { vi } from 'vitest'
 import TodoItem from '../TodoItem'
-import { RenderResult, fireEvent, render, screen } from '@testing-library/react'
+import { fireEvent, render, screen } from '@testing-library/react'
 
 describe('Todo Item component', () => {
-	const onTodoClickFn = vi.fn()
-	let element: RenderResult
+	const onCheckClickFn = vi.fn()
+	const onDeleteClickFn = vi.fn()
 
 	beforeEach(() => {
 		vi.clearAllMocks()
-		element = render(
+		render(
 			<TodoItem
-				todo={{ id: 1, title: 'Workout!', completed: false }}
-				onTodoClick={onTodoClickFn}
+				todo={{ id: '1', title: 'Workout!', completed: false }}
+				onCheckClick={onCheckClickFn}
+				onDeleteClick={onDeleteClickFn}
 			/>,
 		)
 	})
@@ -19,9 +20,12 @@ describe('Todo Item component', () => {
 	it('should render component as expected', () => {
 		expect(screen.getByText('Workout!')).toBeInTheDocument()
 	})
-	it('should call onTodoClick function on todo item component click as expected', () => {
-		const { container } = element
-		fireEvent.click(container.querySelector('.todo-item')!)
-		expect(onTodoClickFn).toHaveBeenCalledTimes(1)
+	it('should call onCheckClick function on todo item component click as expected', () => {
+		fireEvent.click(screen.getByAltText('check-icon')!)
+		expect(onCheckClickFn).toHaveBeenCalledTimes(1)
+	})
+	it('should call onDeleteClick function on todo item component click as expected', () => {
+		fireEvent.click(screen.getByAltText('delete-icon')!)
+		expect(onDeleteClickFn).toHaveBeenCalledTimes(1)
 	})
 })

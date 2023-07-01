@@ -3,10 +3,10 @@ import Button from '../button/Button'
 import './TodoForm.css'
 
 const TodoForm = () => {
-	const { register, errors, onSubmit } = useTodoForm()
+	const { register, errors, onSubmit, handleSubmit } = useTodoForm()
 
 	return (
-		<form className='todo-form' onSubmit={onSubmit}>
+		<form className='todo-form' onSubmit={handleSubmit(onSubmit)}>
 			<div className='input-control'>
 				<label className='input-control__label' htmlFor='todo-title-input'>
 					Title
@@ -27,7 +27,7 @@ const TodoForm = () => {
 				id='create-todo-button'
 				type='button'
 				label='Create'
-				onButtonClick={onSubmit}
+				onButtonClick={handleSubmit(onSubmit)}
 			/>
 		</form>
 	)

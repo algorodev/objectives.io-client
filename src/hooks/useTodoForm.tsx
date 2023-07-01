@@ -24,7 +24,7 @@ const useTodoForm = () => {
 		setFocus('title')
 	}, [setFocus])
 
-	const onSubmit = handleSubmit((data: TodoFormI) => {
+	const onSubmit = (data: TodoFormI) => {
 		const todo: TodoI = {
 			id: uuidv4(),
 			title: data.title,
@@ -32,12 +32,13 @@ const useTodoForm = () => {
 		}
 		dispatch(CreateTodoAction(todo))
 		reset()
-	})
+	}
 
 	return {
 		register,
 		errors,
 		onSubmit,
+		handleSubmit,
 	}
 }
 

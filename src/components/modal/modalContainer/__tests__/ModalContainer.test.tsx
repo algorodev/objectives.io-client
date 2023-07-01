@@ -9,16 +9,12 @@ describe('Modal Container component', () => {
 		vi.clearAllMocks()
 		render(
 			<ModalContainer
-				title='Test Modal'
 				onClose={onCloseFn}
 				children={<h4>Modal Container works!</h4>}
 			/>,
 		)
 	})
 
-	it('should have the title as expected', () => {
-		expect(screen.getByText('Test Modal')).toBeInTheDocument()
-	})
 	it('should render children as expected', () => {
 		expect(screen.getByText('Modal Container works!'))
 	})
