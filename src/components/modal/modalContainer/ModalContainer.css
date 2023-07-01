@@ -1,0 +1,35 @@
+.modal {
+	width: 35%;
+	position: fixed;
+	top: 20vh;
+	left: 0;
+	right: 0;
+	background-color: var(--white-color);
+	color: var(--black-color);
+	margin: 0 auto;
+	border-radius: 1rem;
+	z-index: 30;
+	animation: slide-down 300ms ease-out forwards;
+}
+
+.modal__header {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	height: 3rem;
+	padding: 2rem 3rem;
+	border-bottom: 1px solid var(--grey-color);
+}
+
+.modal__title {
+	font-weight: bold;
+}
+
+.modal__action {
+	width: 3rem;
+	cursor: pointer;
+}
+
+.modal__body {
+	padding: 1rem 3rem;
+}

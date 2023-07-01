@@ -1,0 +1,17 @@
+.button {
+	padding: 1rem 2rem;
+	background-color: var(--primary-color);
+	border: 1px solid var(--secondary-color);
+	border-radius: 1rem;
+	cursor: pointer;
+	transition: background-color 200ms;
+}
+
+.button:hover {
+	background-color: var(--secondary-color);
+}
+
+.button__label {
+	font-weight: 400;
+	cursor: pointer;
+}

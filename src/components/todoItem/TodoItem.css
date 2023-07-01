@@ -1,0 +1,49 @@
+.todo-item {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	background-color: var(--white-color);
+	color: var(--black-color);
+	border-radius: 1rem;
+}
+
+.todo-item__title {
+	font-weight: bold;
+}
+
+.todo-item__title--checked {
+	color: var(--grey-color);
+	text-decoration: line-through;
+}
+
+.todo-item__action {
+	width: 2.5rem;
+	height: 2.5rem;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 0.5rem;
+	border-radius: 50%;
+	border: 1px solid var(--grey-color);
+	box-shadow: 0 3px 8px var(--shadow-color);
+	cursor: pointer;
+}
+
+.todo-item__action--check:hover {
+	box-shadow: inset 0 3px 8px var(--success-color);
+}
+
+.todo-item__action--delete:hover {
+	box-shadow: inset 0 3px 8px var(--error-color);
+}
+
+.todo-item__icon {
+	width: 100%;
+}
+
+.todo-item__actions {
+	display: flex;
+	align-items: center;
+}
