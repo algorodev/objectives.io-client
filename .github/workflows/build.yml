@@ -1,0 +1,26 @@
+name: Build Application
+
+on:
+  push:
+    branches: [ "master", "release", "develop", "feature/**", "bugfix/**", "hotfix/**" ]
+  pull_request:
+    types:
+      - opened
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [18.16.1]
+
+    steps:
+      - uses: actions/checkout@v3
+      - name: Build step
+        uses: actions/setup-node@v3
+        with:
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
+      - run: npm install --quiet --legacy-peer-deps
+      - run: npm run build
