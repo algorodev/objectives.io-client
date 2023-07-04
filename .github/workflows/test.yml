@@ -2,7 +2,7 @@ name: Test Application
 
 on:
   push:
-    branches: [ "master", "release", "develop" ]
+    branches: [ "master", "release", "develop", "feature/**", "bugfix/**", "hotfix/**" ]
   pull_request:
     types:
       - opened
@@ -17,10 +17,10 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Test step
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
           cache: 'npm'
-      - run: npm ci
-      - run: npm run test
+      - run: npm install --quiet --legacy-peer-deps
+      - run: npm run test:coverage
