@@ -2,7 +2,7 @@ name: Test Application
 
 on:
   push:
-    branches: [ "master", "release", "develop", "feature/**" ]
+    branches: [ "master", "release", "develop", "feature/**", "bugfix/**", "hotfix/**" ]
   pull_request:
     types:
       - opened
